@@ -1,13 +1,13 @@
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <header className="App-header">
         Sanjras Weather App
         <a
           className="App-link"
-          href="https://app.netlify.com/teams/sanjra/overview"
+          href="https://github.com/sanjra/react-weather-app"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -17,5 +17,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
