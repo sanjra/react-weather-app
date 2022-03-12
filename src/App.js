@@ -6,18 +6,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <header className="App-header">Lousy Weather App</header>
-        <Weather />
-        <div className="row">
-          <div className="col-12">
-            <img
-              src="https://frinkiac.com/img/S07E06/598146.jpg"
-              alt="Frinkiac Smarch"
-              width="440"
-              height="300"
-            />
-          </div>
-        </div>
+        <Weather defaultCity="Melbourne" />
         <footer>
           <p>
             This project was coded by sanjra while learning React.
