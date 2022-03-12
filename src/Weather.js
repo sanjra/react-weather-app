@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
-    console.log(response.data);
-    setWeatherData({
+      setWeatherData({
       ready: true,
       city: response.data.name,
       country: response.data.city.country,
@@ -14,8 +17,8 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
-      weather_icon: response.data.weather.weather_icon,
-      wind: response.data.main.wind.speed,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
       humidity: response.data.main.humidty,
     });
   }
@@ -34,7 +37,7 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-3">
-              <input type="submit" value="Search" className="btn btn-dark" />
+              <input type="submit" value="Search" className="btn btn-primary w-100" />
             </div>
           </div>
         </form>
