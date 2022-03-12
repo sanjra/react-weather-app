@@ -21,10 +21,6 @@ export default function Weather(props) {
       wind: response.data.main.wind.speed,
       humidity: response.data.main.humidty,
     });
-
-    setTemperature();
-
-    setReady(true);
   }
 
   if (weatherData.ready) {
