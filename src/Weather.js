@@ -15,9 +15,6 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
       weather_icon: response.data.weather.weather_icon,
-      feels_like: response.data.main.feels_like,
-      temp_min: response.data.main.temp_min,
-      temp_max: response.data.main.temp_max,
       wind: response.data.main.wind.speed,
       humidity: response.data.main.humidty,
     });
@@ -50,25 +47,24 @@ export default function Weather(props) {
           <li>{weatherData}</li>
           <li class="text-capitalize">{weatherData.description}</li>
         </ul>
-        <div className="row">
+        <div className="row mt-3">
           <div className="col-6">
-            <img
-              src={weatherData.iconUrl}
-              alt={weatherData.description}
-              className="float-left"
-            />
-            <div className="float-left">
-              <span className="temperature">
-                {Math.round(weatherData.temperature)}
-              </span>
-              <span className="unit">°C</span>
+            <div className="clearfix">
+              <img
+                src={weatherData.iconUrl}
+                alt={weatherData.description}
+                className="float-left"
+              />
+              <div className="float-left">
+                <span className="temperature">
+                  {Math.round(weatherData.temperature)}
+                </span>
+                <span className="unit">°C</span>
+              </div>
             </div>
           </div>
           <div className="col-6">
             <ul>
-              <li>Feels Like: {weatherData.feels_like}</li>
-              <li>Temp Min: {weatherData.temp_min}</li>
-              <li>Temp Max: {weatherData.temp_max}</li>
               <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {weatherData.wind}km/h</li>
             </ul>
